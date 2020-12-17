@@ -1,6 +1,7 @@
 This repository is a clone from the GitHub enterprise server for Georgia Tech. This project was made for CS 4641 - Machine Learning, a group project based course at Georgia Tech. The members of the group (in alphabetical order) are: Abhirup Ghosh, Aniruddha Murali, Rahul Katre, Srishti Mendiratta. 
 
 Initial project proposal video: https://youtu.be/gw1RtcnXz1g
+
 Relevant project presentation video: https://youtu.be/jNt6lvWrAOU
 
 # Introduction/Background
