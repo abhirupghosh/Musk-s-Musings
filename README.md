@@ -36,7 +36,7 @@ In order for later steps to function correctly, we need to label each day of the
 
 With the feature space reduced, the data is ready to be classified using an unsupervised learning implementation. Because we want to label the data without already having any labels, a clustering algorithm works best. We choose the KMeanse algorithm because we want a hard classifier and exactly 3 clusters. The GMM algorithm is a soft classifier, and the DBSCAN algorithm does not result in exactly 3 clusters, which is why we choose KMeans. After running the algorithm, we add the resulting labels as another column in the stocks dataframe before merging it with the tweets dataframe. 
 
-![Market normalized close](https://github.gatech.edu/aghosh74/Musks-Musings/blob/master/images/stocksclose.png) ![TSLA close](https://github.gatech.edu/aghosh74/Musks-Musings/blob/master/images/tslaclose.png)
+![Market normalized close](https://i.ibb.co/R2jxvbk/stocksclose.png) ![TSLA close](https://i.ibb.co/GMQXtdS/tslaclose.png)
 
 The results indicate a good classification. On the left is the market normalized closing prices that are reduced before the KMeans algorithm is applied. Using the results of the algorithm, the labels are applied to the TSLA closing prices. From this, we reason that a purple is a sell, yellow is a hold, and green is a buy, as it indicates that a trader should buy the share when it is significantly underperforming the rest of the market and not just because it is at a low point in the share history till that date. 
 
@@ -56,28 +56,31 @@ Our results using a Naive Bayes classifier are below:
 
 *Prior to upsampling*
 
-![Accuracy details](https://github.gatech.edu/aghosh74/Musks-Musings/blob/master/images/nb_prior_accuracy.png)
-![Confusion matrix](https://github.gatech.edu/aghosh74/Musks-Musings/blob/master/images/confusion_nb_prior.png)
+![Accuracy details](https://i.ibb.co/bz69V72/nb-prior-accuracy.png)
+![Confusion matrix](https://i.ibb.co/7W07pP7/confusion-nb-prior.png)
 
 *After upsampling*
 
-![Accuracy details](https://github.gatech.edu/aghosh74/Musks-Musings/blob/master/images/nb_post_accuracy.png)
-![Confusion matrix](https://github.gatech.edu/aghosh74/Musks-Musings/blob/master/images/confusion_nb_post.png)
+![Accuracy details](https://i.ibb.co/vZ61CQv/nb-post-accuracy.png)
+![Confusion matrix](https://i.ibb.co/tsG1qY3/confusion-nb-post.png)
 
 ### Neural Network
-We used a neural network with 3 hidden layers, each with 12, 8, 8 neurons respectively. As we reduced the number of features from our TFIDF matrix to 4000, we have 4000 input neurons, and 3 output neurons (one for each class - buy, hold, sell). Similar to the Naive Bayes model, upsampling led to much better results in our case. Below, you will find the model accuracy, model loss, and confusion matrices for before and after upsampling the data.
+We used a neural network with 3 hidden layers, each with 12, 8, 8 neurons respectively. As we reduced the number of features from our TFIDF matrix to 4000, we have 4000 input neurons, and 3 output neurons (one for each class - buy, hold, sell). 
+![Model Architecture](https://i.ibb.co/dtC4SC5/NN-architecture.png)
+
+Similar to the Naive Bayes model, upsampling led to much better results in our case. Below, you will find the model accuracy, model loss, and confusion matrices for before and after upsampling the data.
 
 *Prior to upsampling*
 
-![Model Accuracy](https://github.gatech.edu/aghosh74/Musks-Musings/blob/master/images/NN-prior-acc.png)
-![Model Loss](https://github.gatech.edu/aghosh74/Musks-Musings/blob/master/images/NN-prior-loss.png)
-![Confusion matrix](https://github.gatech.edu/aghosh74/Musks-Musings/blob/master/images/NN-prior-confusion.png)
+![Model Accuracy](https://i.ibb.co/dbpnfJs/NN-prior-acc.png)
+![Model Loss](https://i.ibb.co/5GSjgTW/NN-prior-loss.png)
+![Confusion matrix](https://i.ibb.co/W6HmBPH/NN-prior-confusion.png)
 
 *After upsampling*
 
-![Model Accuracy](https://github.gatech.edu/aghosh74/Musks-Musings/blob/master/images/NN-post-acc.png)
-![Model Loss](https://github.gatech.edu/aghosh74/Musks-Musings/blob/master/images/NN-post-loss.png)
-![Confusion matrix](https://github.gatech.edu/aghosh74/Musks-Musings/blob/master/images/NN-post-confusion.png)
+![Model Accuracy](https://i.ibb.co/XDHgG8G/NN-post-acc.png)
+![Model Loss](https://i.ibb.co/yP8zCY5/NN-post-loss.png)
+![Confusion matrix](https://i.ibb.co/D9M0Fmq/NN-post-confusion.png)
 
 A few notes about our Neural Network:
 - As we started off with a very low number of tweets for a neural network, which often requires >100,000 datapoints to lead to a good accuracy, it was obvious that we wouldn't have great results with only ~7500 tweets, which were approximately ~15,000 after upsampling.
@@ -115,4 +118,6 @@ Overall, our Neural Network performed the best with an accuracy of ~85% (however
   
   [3]: Moghar, A., & Hamiche, M. (2020). Stock Market Prediction Using LSTM Recurrent Neural Network. *Procedia Computer Science,* *170*, 1168-1173. doi:10.1016/j.procs.2020.03.049
 
+  
+![](https://ibb.co/HPT0xK8)
   
