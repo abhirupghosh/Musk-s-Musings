@@ -1,3 +1,5 @@
+This repository is a clone from the GitHub enterprise server for Georgia Tech. This project was made for CS 4641 - Machine Learning, a group project based course at Georgia Tech. The members of the group (in alphabetical order) are: Abhirup Ghosh, Aniruddha Murali, Rahul Katre, Srishti Mendiratta. 
+
 # Introduction/Background
 
 Elon Musk, the founder and CEO of Tesla, is known for his somewhat erratic behavior. His statements have a profound effect on the stock prices of his company and its competitors. Most of his statements come as a result of his tweets on Twitter, totaling ~7000 tweets since 2012. We want to find how each tweet impacts trading strategy for TSLA stock.
